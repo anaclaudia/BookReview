@@ -2,7 +2,7 @@ class BooksController < ApplicationController
   before_action :find_book, only: [:show, :edit, :update, :delete]
 	
 	def index
-		@books = Book.all
+		@books = Book.all.order("created_at DESC")
   end
 
 	def show

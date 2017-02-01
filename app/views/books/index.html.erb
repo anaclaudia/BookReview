@@ -3,6 +3,8 @@
 	<h2><%= link_to book.title, book_path(book) %></h2>
 <% end %>
 
-<div class="col-sm-4">
-	<%= link_to "Add Book", new_book_path, class: "btn btn-xl btn-primary" %>
-</div>
+<% if user_signed_in? %>
+	<div class="col-sm-4">
+		<%= link_to "Add Book", new_book_path, class: "btn btn-xl btn-primary" %>
+	</div>
+<% end %>

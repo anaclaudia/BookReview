@@ -1,9 +1,7 @@
-<h1 class="text-center">Book <%= @book.title %></h1>
+<h1 class="text-center"><%= @book.title %></h1>
 <dl>
 	<dt>Description</dt>
 		<dd><%= @book.description %></dd>
-	<dt>Author's ID</dt>
-		<dd><%= @book.author_id %></dd>
 </dl>
 <%= link_to "Edit", edit_book_path(@book), class: "btn btn-primary" %>
 <%= link_to "Delete", book_path(@book), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>

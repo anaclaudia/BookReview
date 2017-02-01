@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :find_book, only: [:show, :edit, :update, :delete]
+  before_action :find_book, only: [:show, :edit, :update, :destroy]
 	
 	def index
 		@books = Book.all.order("created_at DESC")
@@ -34,6 +34,10 @@ class BooksController < ApplicationController
 		end
 	end
 
+	def destroy
+		@book.destroy
+		redirect_to root_path
+	end
 
 		private
 		def book_params

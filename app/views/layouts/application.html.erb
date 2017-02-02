@@ -31,7 +31,7 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Categories
 							<span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
-							<% Category.all.each do |category| %>
+							<% categories.each do |category| %>
 								<li>
 									<%= link_to category.name, books_path(category: category.name) %>
 								</li>
@@ -41,7 +41,6 @@
 				</ul>
 			</div>
 		</div>
-
 
 		<p class="notice"><%= notice %></p>
 		<p class="alert"><%= alert %></p>

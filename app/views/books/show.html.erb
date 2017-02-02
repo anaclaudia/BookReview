@@ -1,10 +1,19 @@
-<h1 class="text-center"><%= @book.title %></h1>
-<dl>
-	<dt>Description</dt>
-		<dd><%= @book.description %></dd>
+<div class="row">
+	
+	<div class="col-md-4">
+		<%= image_tag @book.book_img.url(:book_show), class: "book_show" %>
+	</div>
+	
+	<h1><%= @book.title %></h1>
+
+	<dl>
+		<dt>Description</dt>
+			<dd><%= @book.description %></dd>
 	</dl>
+
 	<% if @book.user_id == current_user.id %>
 		<%= link_to "Edit", edit_book_path(@book), class: "btn btn-primary" %>
 		<%= link_to "Delete", book_path(@book), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
-		<%= link_to "Back", root_path, class: "btn btn-default" %>
 	<% end %>
+	<%= link_to "Back", root_path, class: "btn btn-default" %>
+</div>

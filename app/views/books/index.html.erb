@@ -2,8 +2,13 @@
 
 <% if @books.count == 0 %>
 	<h2>There is not books available on this category</h2>
+
 <% else %>
-	<% @books.each do |book| %>
-		<%= link_to "#{image_tag book.book_img.url(:book_index)}".html_safe, book_path(book.id) %>
-	<% end %>
+	<div class="row">
+		<% @books.each do |book| %>
+			<div class="col-md-3">
+				<%= link_to "#{image_tag book.book_img.url(:book_index), class: "books"}".html_safe, book_path(book.id) %>
+			</div>
+		<% end %>
+	</div>
 <% end %>

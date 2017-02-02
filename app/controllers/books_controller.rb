@@ -31,12 +31,10 @@ class BooksController < ApplicationController
 	end
 
 	def update
-		respond_to do |format|
-			if @book.update(book_params)
-				format.html { redirect_to @book, notice: "Book sucessfuly updated" }
-			else
-				render 'edit'
-			end
+		if @book.update(book_params)
+			redirect_to root_path, notice: "Book sucessfuly updated"
+		else
+			render 'edit'
 		end
 	end
 

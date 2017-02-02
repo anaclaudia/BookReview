@@ -4,8 +4,6 @@
 	<h2>There is not books available on this category</h2>
 <% else %>
 	<% @books.each do |book| %>
-		<a href="/books/<%= book.id %>">
-			<%= image_tag book.book_img.url(:book_index) %>
-		</a>
+		<%= link_to "#{image_tag book.book_img.url(:book_index)}".html_safe, book_path(book.id) %>
 	<% end %>
 <% end %>

@@ -1,6 +1,11 @@
-<h1 class= "text-center">Books</h1>
-<% @books.each do |book| %>
-	<h2><%= link_to book.title, book_path(book) %></h2>
+<h1 class="text-center current-category"><%= params[:category] %></h1>
+
+<% if @books.count == 0 %>
+	<h2>There is not books available on this category</h2>
+<% else %>
+	<% @books.each do |book| %>
+		<h2><%= link_to book.title, book_path(book) %></h2>
+	<% end %>
 <% end %>
 
 <% if user_signed_in? %>

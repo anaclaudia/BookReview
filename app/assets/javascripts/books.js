@@ -2,7 +2,7 @@ var rating;
 
 $(document).ready(function(){
 	rating();
-}
+});
 
 rating = function() {
 	$('.review-rating').raty({

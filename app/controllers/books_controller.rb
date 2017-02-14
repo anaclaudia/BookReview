@@ -1,13 +1,13 @@
 class BooksController < ApplicationController
   before_action :find_book, only: [:show, :edit, :update, :destroy]
-	before_action :authenticate_user!, except: :index
+	before_action :authenticate_user!, except: [:index, :show]
 	
 	def index
-		if params[:category].blank?
-			@books = Book.all.order("created_at DESC")
+		if params[:category_id].blank?
+			@books = Book.order("created_at DESC")
 		else
-			@category_id = Category.find_by(name: params[:category]).id
-			@books = Book.where(:category_id => @category_id)
+			@category = Category.find(params[:category_id])
+			@books = @category.books
 		end
   end
 

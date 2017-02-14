@@ -1,13 +1,13 @@
-<h1 class="text-center current-category"><%= params[:category] %></h1>
+<h1 class="text-center current-category"><%= @category.name if @category  %></h1>
 
 <% if @books.count == 0 %>
-	<h2>There is not books available on this category</h2>
+	<h4>There is not books available on this category</h4>
 
 <% else %>
 	<div class="row">
 		<% @books.each do |book| %>
 			<div class="col-md-3">
-				<%= link_to "#{image_tag book.book_img.url(:book_index), class: "books"}".html_safe, book_path(book.id) %>
+				<%= link_to image_tag(book.book_img.url(:book_index)), book_path(book.id) %>
 			</div>
 		<% end %>
 	</div>

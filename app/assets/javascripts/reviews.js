@@ -1,13 +1,24 @@
-var rating;
+var FormRating;
+var ViewRating;
 
 $(document).ready(function(){
-	rating();
+	FormRating();
+	ViewRating();
 });
 
-
-rating = function(){
+FormRating = function(){
 	$('#rating').raty({
 		path: '/assets/',
 		scoreName: 'review[rating]'
+	});
+}
+
+ViewRating = function() {
+	$('.review-rating').raty({
+		readOnly: true,
+		score: function() {
+			return $(this).attr('data-score');
+		},
+		path: '/assets/'	
 	});
 }

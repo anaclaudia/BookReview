@@ -9,7 +9,7 @@ default: &default
   pool: 5
   timeout: 5000
 
-production:
+heroku: &heroku
   adapter: postgresql
   pool: 5
   timeout: 5000
@@ -26,6 +26,6 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *production
+  <<: *heroku
   database: booksreview_production
   username: booksadmin

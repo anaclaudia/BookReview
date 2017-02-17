@@ -9,6 +9,11 @@ default: &default
   pool: 5
   timeout: 5000
 
+production:
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+
 development:
   <<: *default
   database: db/development.sqlite3
@@ -21,7 +26,6 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-    database: booksreview_production
-    username: booksadmin
-    password: <%= ENV['BOOKSREVIEW_DATABASE_PASSWORD'] %>
+  <<: *production
+  database: booksreview_production
+  username: booksadmin

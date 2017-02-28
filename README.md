@@ -1,24 +1,3 @@
-# README
+With this app users can sign in, add new books they are reading or have already read adding reviews and rating them.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+All the books reviews can be visualized by other people.
